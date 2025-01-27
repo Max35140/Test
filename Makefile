@@ -3,11 +3,11 @@ CFLAGS = -fopenmp
 
 all: program
 
-program: main.o
-    $(CC) $(CFLAGS) -o program main.o
+program: task.o
+    $(CC) $(CFLAGS) -o program task.o
 
-main.o: main.c
-    $(CC) $(CFLAGS) -c main.c
+task.o: task.c
+    $(CC) $(CFLAGS) -c task.c
 
 clean:
     rm -f *.o program
