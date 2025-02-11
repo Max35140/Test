@@ -8,10 +8,7 @@ int main() {
     #pragma omp master
     {
       for (int i = 0; i < 10; i++) {
-        #pragma omp task
-        {
-          int j = 1;
-        }
+        int j = 1;
       }
     }
   }
