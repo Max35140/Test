@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <omp.h>
 
+int task_funktion(int id) {
+  printf("Task %d is being executed by thread %d\n", id, omp_get_thread_num());
+}
+
+
 int main() {
   omp_set_num_threads(4);
   #pragma omp parallel 
@@ -8,7 +13,10 @@ int main() {
     #pragma omp master
     {
       for (int i = 0; i < 10; i++) {
-        int j = 1;
+        #pragma omp task
+        {
+          task_funktion(i);
+        }
       }
     }
   }
