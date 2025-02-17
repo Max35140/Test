@@ -1,9 +1,9 @@
 CC = gcc
 CFLAGS = -fopenmp
 
-all: task.o
+all: task
 program: task.o
-	$(CC) $(CFLAGS) -o task.o task.o
+	$(CC) $(CFLAGS) -o task task.o
 task.o: task.c
 	$(CC) $(CFLAGS) -c task.c
 
