@@ -3,7 +3,7 @@ CFLAGS = -fopenmp
 
 all: program
 program: task.o
-	$(CC) $(CFLAGS) -o program task.o -lgomp
+	$(CC) $(CFLAGS) program -o task.o
 task.o: task.c
 	$(CC) $(CFLAGS) -c task.c
 
