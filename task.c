@@ -19,13 +19,12 @@ int main() {
         #pragma omp task
         {
           task_funktion(i);
-          #pragma omp task
+        }
+        #pragma omp task
           {
             task_funktion(100);
           }
-        }
       }
-      
     }
   }
   return 0;
