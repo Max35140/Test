@@ -17,6 +17,10 @@ int main() {
         {
           task_funktion(i);
         }
+        #pragma omp task
+        {
+          task_funktion(i);
+        }
       }
     }
   }
